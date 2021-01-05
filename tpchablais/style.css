@@ -9,12 +9,9 @@ body {
 }
 
 h1 {
-  margin-top: : 20px;
-  margin-left: : 10%;
   width: 100%;
 }
 h2 {
-  margin-left: : 20px;
   width: 50%;
 }
 
@@ -24,27 +21,47 @@ img {
   width: 210px;
 }
 
-.ski {
+.tski {
   position: absolute;
   top: 110px;
   left: 20px;
-  height: 400px;
-  width: 30%;
+  height: 380px;
+  width: 28%;
   background-color: #eee;
+  padding: 15px;
 }
 
-.ski .icone {
-  width: 30px;
-  margin-right: 50px;
-}
 
-.ski img{
-  margin-top: 50px;
-  margin right: 30px;
-  float: bottom;
+.tski img{
+  margin: auto;
+  margin-top: 15px;
+  margin-right: 23px;
   width: 90%;
 }
 
+.tski h3{
+  margin-top: 0px;
+  text-align: center;
+}
+
+.ski {
+  padding: 10px;
+  background-color: white;
+  height: 325px;
+  width: 95.5%;
+}
+
+.trains {
+  position: absolute;
+  top: 525px;
+  left: 20px;
+  height: calc(100vh - 535px);
+  width: 30%;
+  background-color: #eee;
+}
+.trains h3{
+  text-align: center;
+}
 
 #map {
   position: absolute;
@@ -53,12 +70,4 @@ img {
   height: calc(100vh - 120px);
   width: 67%;
   background-color: #eee;
-}
-.trains {
-  position: absolute;
-  top: 525px;
-  left: 20px;
-  height: calc(100vh - 530px);
-  width: 30%;
-  background-color: #99d8c9;
 }

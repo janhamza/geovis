@@ -117,16 +117,18 @@ for (var k in points.features){
     //Informations sur le marqueur
   marqueur.on('click', function(e){
       var poi = e.target.poi;
-      var html = '<h3>'+ poi.properties.nom + '</h3>';
+      var html = '<h3>'+ poi.properties.nom + '</h3>'
+      + '<p>' + poi.properties.divers + '</p>'
+      + '<p>' + poi.properties.ligne + '</p>'
       let sct = '.trains'
     // informations si c'est une station de ski
     if(poi.properties.Type == 'ski') {sct = '.ski';
-    html
-    += poi.properties.arretpp + '</p>'
-    + ' <p>'+ poi.properties.journee + '</p>'
-    + '<a href=' + poi.properties.web + '> Site Web </a>'
-     + '<img src=' + poi.properties.img + ' alt="ski" >'
-};
+
+      html += poi.properties.arretpp + '</p>'
+      + ' <p>'+ poi.properties.journee + '</p>'
+      + '<a href=' + poi.properties.web + '> Site Web </a>'
+      + '<img src=' + poi.properties.img + ' alt="ski" >'
+    };
       document.querySelector(sct).innerHTML = html;
 
     //remettre les icones de base
