@@ -120,12 +120,13 @@ for (var k in points.features){
       var html = '<h3>'+ poi.properties.nom + '</h3>'
       + '<p>' + poi.properties.divers + '</p>'
       + '<p>' + poi.properties.ligne + '</p>'
-      let sct = '.trains'
+      let sct = '.trains';
+
     // informations si c'est une station de ski
     if(poi.properties.Type == 'ski') {sct = '.ski';
 
-      html += poi.properties.arretpp + '</p>'
-      + ' <p>'+ poi.properties.journee + '</p>'
+      html += ' <p>' + poi.properties.arretpp + '</p>'
+      + '<p>'+ poi.properties.journee + '</p>'
       + '<a href=' + poi.properties.web + '> Site Web </a>'
       + '<img src=' + poi.properties.img + ' alt="ski" >'
     };
@@ -146,7 +147,7 @@ for (var k in points.features){
     poi.marqueur.setIcon(icone_marqueur);
 
     //Zoom sur le point cliqué
-    mymap.flyTo([poi.geometry.coordinates[1], poi.geometry.coordinates[0]], 12);
+    mymap.flyTo([poi.geometry.coordinates[1], poi.geometry.coordinates[0]], 13);
   })
 
   // Attacher l'étiquette au marqueur
