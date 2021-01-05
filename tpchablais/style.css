@@ -1,0 +1,64 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10pt;
+  margin: 20px;
+  margin-right: 17px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+
+}
+
+h1 {
+  margin-top: : 20px;
+  margin-left: : 10%;
+  width: 100%;
+}
+h2 {
+  margin-left: : 20px;
+  width: 50%;
+}
+
+img {
+  float: right;
+  margin: auto;
+  width: 210px;
+}
+
+.ski {
+  position: absolute;
+  top: 110px;
+  left: 20px;
+  height: 400px;
+  width: 30%;
+  background-color: #eee;
+}
+
+.ski .icone {
+  width: 30px;
+  margin-right: 50px;
+}
+
+.ski img{
+  margin-top: 50px;
+  margin right: 30px;
+  float: bottom;
+  width: 90%;
+}
+
+
+#map {
+  position: absolute;
+  top: 110px;
+  right: 17px;
+  height: calc(100vh - 120px);
+  width: 67%;
+  background-color: #eee;
+}
+.trains {
+  position: absolute;
+  top: 525px;
+  left: 20px;
+  height: calc(100vh - 530px);
+  width: 30%;
+  background-color: #99d8c9;
+}
