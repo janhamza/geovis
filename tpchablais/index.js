@@ -18,11 +18,6 @@ var osmNoirBlanc = L.tileLayer(
     attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
   }
 );
-var esriImagery = L.tileLayer(
-  'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/t\ile/{z}/{y}/{x}', {
-    attribution: '&copy; <a href="http://www.esri.com">Esri</a>, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-  }
-);
 // Créer les boutons pour changer la couche de base
 var baseLayers = {
   "OpenStreetMap": osmLayer,
@@ -119,7 +114,6 @@ for (var k in points.features){
       var poi = e.target.poi;
       var html = '<h3>'+ poi.properties.nom + '</h3>'
       + '<p>' + poi.properties.divers + '</p>'
-      + '<p>' + poi.properties.ligne + '</p>'
       let sct = '.trains';
 
     // informations si c'est une station de ski
@@ -128,8 +122,41 @@ for (var k in points.features){
       html += ' <p>' + poi.properties.arretpp + '</p>'
       + '<p>'+ poi.properties.journee + '</p>'
       + '<a href=' + poi.properties.web + '> Site Web </a>'
-      + '<img src=' + poi.properties.img + ' alt="ski" >'
+      + '<div class="container">'
+        + '<img src=' + poi.properties.img + ' alt="ski", class = "image" >'
+        + '<div class="overlay">'
+          + ' <div class="text">'+ poi.properties.imgnom + '</div>'
+          + ' <div class="lien"> <em>'+ poi.properties.source + '<a href=' + poi.properties.lien + '>Lien </a> </em></div>'
+      +   '</div>'
+      +  '</div>';
     };
+
+    // afficher l'icone de la ligne selon la ligne
+    if (poi.properties.ligne == 'Ligne : Aigle - Champéry') {sct = '.trains';
+      html += '<p>' + poi.properties.ligne + '<img src=' + poi.properties.limg + ' alt="ligne", class="l126"></p>'
+    }
+    if (poi.properties.ligne == 'Ligne: Aigle - Leysin') {sct = '.trains';
+      html += '<p>' + poi.properties.ligne + '<img src=' + poi.properties.limg + ' alt="ligne", class="l125"></p>'
+    }
+    if (poi.properties.ligne == 'Ligne: Aigle - Le Sépey - Les Diablerets') {sct = '.trains';
+      html += '<p>' + poi.properties.ligne + '<img src=' + poi.properties.limg + ' alt="ligne", class="l124"></p>'
+    }
+    if (poi.properties.ligne == 'Ligne: Bex - Gryon - Villars-sur-Ollon') {sct = '.trains';
+      html += '<p>' + poi.properties.ligne + '<img src=' + poi.properties.limg + ' alt="ligne", class="l127"></p>'
+    }
+    if (poi.properties.ligne == 'Ligne: Villars-sur-Ollon - Col-de-Bretaye') {sct = '.trains';
+      html += '<p>' + poi.properties.ligne + '<img src=' + poi.properties.limg + ' alt="ligne", class="l128"></p>'
+    }
+
+    // afficher les îcones pour les arrêts qui sont sur plusieurs lignes
+    if (poi.properties.id == 'aigle') {sct = '.trains';
+      html += '<p>' + poi.properties.ligne + '<img src=' + poi.properties.limg + ' alt="ligne", class="laigle"></p>'
+    }
+    if (poi.properties.id == 'villarssurollon') {sct = '.trains';
+      html += '<p>' + poi.properties.ligne + '<img src=' + poi.properties.limg + ' alt="ligne", class="lvillars"></p>'
+    }
+
+
       document.querySelector(sct).innerHTML = html;
 
     //remettre les icones de base
