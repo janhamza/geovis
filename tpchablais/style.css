@@ -5,8 +5,8 @@ body {
   margin-right: 1%;
   margin-bottom: 0.8%;
   margin-top: 0.8%;
-
 }
+
 .title {
   background-color: #eee;
   height: 12.2%;
@@ -20,6 +20,7 @@ body {
   width: 100%;
   padding-top: 0.5%;
 }
+
 .title h2 {
   margin-left: 1%;
   width: 50%;
@@ -72,19 +73,20 @@ img {
 
 .text {
   color: white;
-  font-size: 20px;
+  font-size: 1.2em;
   position: absolute;
+  text-align: center;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
 
-.container .lien{
+.container .lien {
   font-size: 0.8em;
 }
 
-.tski h3{
+.tski h3 {
   margin-top: 0px;
   text-align: center;
 }
@@ -106,7 +108,7 @@ img {
   padding: 15px;
 }
 
-.ttrains h3{
+.ttrains h3 {
   margin-top: 0px;
   text-align: center;
 }
@@ -116,12 +118,13 @@ img {
   background-color: white;
   height: 60%;
   width: 95.5%;
+  overflow: auto;
 }
-.trains p{
+
+.trains p {
   padding-left: 5%;
   padding-right: 10%;
   line-height: 1.6;
-
 }
 
 .l126, .l125, .l124, .l127, .l128, .laigle, .lvillars {
@@ -129,8 +132,6 @@ img {
   max-width: 30%;
   height: auto;
 }
-
-
 
 #map {
   position: absolute;
