@@ -13,6 +13,11 @@ mymap.setMaxZoom(15);
 L.control.scale().addTo(mymap);
 
 // Définir les différentes couches de base:
+var transp = L.tileLayer(
+  'https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=7c13362a329e40eab00c8c89f9ba95a2', {
+    attribution: ' Maps &copy; <a href="https://www.thunderforest.com/">Thunderforest, </a> Data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+  }
+);
 var osmLayer = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
 });
@@ -21,8 +26,10 @@ var osmNoirBlanc = L.tileLayer(
     attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
   }
 );
+
 // Créer les boutons pour changer la couche de base
 var baseLayers = {
+  "Transport Map": transp,
   "OpenStreetMap": osmLayer,
   "OpenStreetMap noir et blanc": osmNoirBlanc,
 };
@@ -30,7 +37,7 @@ var overlays = {};
 L.control.layers(baseLayers, overlays).addTo(mymap);
 
 //Choix de la couche par défaut
-osmLayer.addTo(mymap);
+transp.addTo(mymap);
 
 
 
@@ -41,19 +48,19 @@ var icones = {};
 icones['terminus'] = L.icon({
   iconUrl: 'icones/terminus.png',
   zIndexOffset: 1,
-  iconSize: [15, 16], // size of the icon
+  iconSize: [16, 16], // size of the icon
 });
 
 // Icone pour les arrêts-sur-demande
 icones['arret'] = L.icon({
   iconUrl: 'icones/arret.png',
-  iconSize: [8, 8], // size of the icon
+  iconSize: [9, 9], // size of the icon
 });
 
 // Icone pour les vrais arrets
 icones['Varret'] = L.icon({
   iconUrl: 'icones/arret.png',
-  iconSize: [12, 12], // size of the icon
+  iconSize: [13, 13], // size of the icon
 });
 
 // Icones pour le ski
@@ -114,25 +121,25 @@ for (var k in points.features) {
 
   //Informations sur le marqueur
   marqueur.on('click', function(e) {
-        var poi = e.target.poi;
-        var html = '<h3>' + poi.properties.nom + '</h3>' +
-          '<p>' + poi.properties.divers + '</p>'
-        let sct = '.trains';
+    var poi = e.target.poi;
+    var html = '<h3>' + poi.properties.nom + '</h3>' +
+      '<p>' + poi.properties.divers + '</p>'
+    let sct = '.trains';
 
-        // informations si c'est une station de ski
-        if (poi.properties.Type == 'ski') {
-          sct = '.ski';
-          html += ' <p>' + poi.properties.arretpp + '</p>' +
-            '<p>' + poi.properties.journee + '</p>' +
-            '<a href=' + poi.properties.web + '> Site Web </a>' +
-            '<div class="container">' +
-            '<img src=' + poi.properties.img + ' alt="ski", class = "image" >' +
-            '<div class="overlay">' +
-            ' <div class="text">' + poi.properties.imgnom + '</div>' +
-            ' <div class="lien"> <em>' + poi.properties.source + '<a href=' + poi.properties.lien + '>Lien </a> </em></div>' +
-            '</div>' +
-            '</div>';
-        };
+    // informations si c'est une station de ski
+    if (poi.properties.Type == 'ski') {
+      sct = '.ski';
+      html += ' <p>' + poi.properties.arretpp + '</p>' +
+        '<p>' + poi.properties.journee + '</p>' +
+        '<a href=' + poi.properties.web + '> Site Web </a>' +
+        '<div class="container">' +
+        '<img src=' + poi.properties.img + ' alt="ski", class = "image" >' +
+        '<div class="overlay">' +
+        ' <div class="text">' + poi.properties.imgnom + '</div>' +
+        ' <div class="lien"> <em>' + poi.properties.source + '<a href=' + poi.properties.lien + '>Lien </a> </em></div>' +
+        '</div>' +
+        '</div>';
+    };
     // afficher l'icone de la ligne selon la ligne
     if (poi.properties.ligne == 'Ligne : Aigle - Champéry') {
       sct = '.trains';
@@ -164,7 +171,6 @@ for (var k in points.features) {
       sct = '.trains';
       html += '<p>' + poi.properties.ligne + '<img src=' + poi.properties.limg + ' alt="ligne", class="lvillars"></p>'
     }
-
 
     document.querySelector(sct).innerHTML = html;
 

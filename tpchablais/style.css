@@ -1,9 +1,10 @@
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.8em;
-  margin: 1%;
+  margin: %;
   margin-right: 1%;
-  margin-bottom: 0.8%;
+  margin-left: 1.1%;
+  margin-bottom: 0%;
   margin-top: 0.8%;
 }
 
@@ -102,12 +103,11 @@ img {
 .ttrains {
   position: absolute;
   top: 74%;
-  height: 19.1%;
+  height: 18.9%;
   width: 28%;
   background-color: #eee;
   padding: 15px;
 }
-
 .ttrains h3 {
   margin-top: 0px;
   text-align: center;
@@ -137,7 +137,18 @@ img {
   position: absolute;
   top: 15%;
   right: 1%;
-  height: 82.3%;
+  height: 81.4%;
   width: 67%;
-  background-color: #eee;
+  border-style: solid;
+  border-color: #eee;
+}
+
+.auteur {
+  position: absolute;
+  bottom: 0%;
+  left: 93.5%;
+  top: 97.5%;
+  font-size: 0.7em;
+  color: #7F7F80;
+  margin: 0%;
 }

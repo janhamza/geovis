@@ -68,10 +68,10 @@ var points = {
         "journee": "Prix de la journée pour un adulte (2021): 57 CHF",
         "arretpp": "Arrêt le plus proche : Vers l'Eglise, 0 minute de marche (50m)",
         "web": "https://www.villars-diablerets.ch/en/",
-        "img": "image/diab.jpg",
-        "source": "Auteur de l'image: Campiana. ",
-        "lien": "https://commons.wikimedia.org/wiki/File:2007-12-28_DSC_0142_RV648_Aux_Diablerets-Suisse.jpg",
-        "imgnom": "La Quille du Diable, les Diablerets"
+        "img": "image/vers.jpg",
+        "source": "Auteur de l'image: Alain Gavillet. ",
+        "lien": "https://commons.wikimedia.org/wiki/File:Trains_de_l%27Aigle_Sepey_Diablerets_03.jpg",
+        "imgnom": "Train Aigle-Sepey-Diablerets à Vers l'Eglise"
       },
       "geometry": {
         "type": "Point",
@@ -114,10 +114,10 @@ var points = {
         "journee": "Prix de la journée pour un adulte (2021): 57 CHF",
         "arretpp": "Arrêt le plus proche : Barboleusaz, 7 minutes de marche (550m)",
         "web": "https://www.villars-diablerets.ch/en/",
-        "img": "image/diab.jpg",
-        "source": "Auteur de l'image: Campiana. ",
-        "lien": "https://commons.wikimedia.org/wiki/File:2007-12-28_DSC_0142_RV648_Aux_Diablerets-Suisse.jpg",
-        "imgnom": "La Quille du Diable, les Diablerets"
+        "img": "image/barb.jpg",
+        "source": "Auteur de l'image: Wouter Hagens. ",
+        "lien": "https://commons.wikimedia.org/wiki/File:Barboleusaz_les_chaux_B.jpg",
+        "imgnom": "Télécabine de la Barboleuse"
       },
       "geometry": {
         "type": "Point",
@@ -137,10 +137,10 @@ var points = {
         "journee": "Prix de la journée pour un adulte (2021): 57 CHF",
         "arretpp": "Arrêt le plus proche : Col de Bretaye, 0 minute de marche (50m)",
         "web": "https://www.villars-diablerets.ch/en/",
-        "img": "image/diab.jpg",
-        "source": "Auteur de l'image: Campiana. ",
-        "lien": "https://commons.wikimedia.org/wiki/File:2007-12-28_DSC_0142_RV648_Aux_Diablerets-Suisse.jpg",
-        "imgnom": "La Quille du Diable, les Diablerets"
+        "img": "image/col.jpg",
+        "source": "Auteur de l'image: Klaus Foehl. ",
+        "lien": "https://commons.wikimedia.org/wiki/File:Col_de_Bretaye02_2016-02-06.jpg",
+        "imgnom": "Train au Col de Bretaye"
       },
       "geometry": {
         "type": "Point",
